@@ -68,72 +68,80 @@ func CheckDraw():
 		return false
 
 func HumanMove(cell):
-	inoccupiedCells = []
-	for item in cells:
-			if item.value == 0:  
-				inoccupiedCells.append(item)
-			if item.value != 0:  
-				inoccupiedCells.remove_at(cells.find(item))
-	print (inoccupiedCells)
-	print("Human")
-	cell.setX()
-	turns_played += 1
-	occupiedCells.append(cell)
-	NPCMove()
-	# Pick an unchosen cell if CheckEnd returns true
+	if CheckWin() == false:
+		if CheckDraw() == false:
+			inoccupiedCells = []
+			for item in cells:
+					if item.value == 0:  
+						inoccupiedCells.append(item)
+					if item.value != 0:  
+						inoccupiedCells.remove_at(cells.find(item))
+			print (inoccupiedCells)
+			print("Human")
+			cell.setX()
+			turns_played += 1
+			occupiedCells.append(cell)
+			NPCMove()
+			# Pick an unchosen cell if CheckEnd returns true 
 
 func HumanMoveTwo(cell):
-	inoccupiedCells = []
-	for item in cells:
-			if item.value == 0:  
-				inoccupiedCells.append(item)
-			if item.value != 0:  
-				inoccupiedCells.remove_at(cells.find(item))
-	print (inoccupiedCells)
-	print("Human")
-	cell.setO()
-	turns_played += 1
-	occupiedCells.append(cell)
-	NPCMove()
-	# Pick an unchosen cell if CheckEnd returns true 
+	if CheckWin() == false:
+		if CheckDraw() == false:
+			inoccupiedCells = []
+			for item in cells:
+					if item.value == 0:  
+						inoccupiedCells.append(item)
+					if item.value != 0:  
+						inoccupiedCells.remove_at(cells.find(item))
+			print (inoccupiedCells)
+			print("Human")
+			cell.setO()
+			turns_played += 1
+			occupiedCells.append(cell)
+			NPCMove()
+			# Pick an unchosen cell if CheckEnd returns true 
 
 func NPCMove():
-	print("NPC")
-	inoccupiedCells = []
-	for item in cells:
-		print(item.value)
-	for item in cells:
-		if item.value == 0:  
-			inoccupiedCells.append(item)
-		if item.value != 0:  
-			inoccupiedCells.remove_at(cells.find(item))
-			print("Unoccupied")
-			print(len(inoccupiedCells))  
-	var randomIndex = randi_range(0, len(inoccupiedCells))  # Generate a random index within the array size
-	var randomItem = inoccupiedCells[randomIndex]  # Access the element at the random index
-	print("NPC")
-	randomItem.setO()
-	turns_played += 1
-	occupiedCells.append(randomItem)
+	if CheckWin() == false:
+		if CheckDraw() == false:
+			print("NPC")
+			inoccupiedCells = []
+			for item in cells:
+				print(item.value)
+			for item in cells:
+				if item.value == 0:  
+					inoccupiedCells.append(item)
+				if item.value != 0:  
+					inoccupiedCells.remove_at(cells.find(item))
+					print("Unoccupied")
+					print(len(inoccupiedCells))  
+			var randomIndex = randi_range(0, len(inoccupiedCells))  # Generate a random index within the array size
+			var randomItem = inoccupiedCells[randomIndex]  # Access the element at the random index
+			print("NPC")
+			randomItem.setO()
+			turns_played += 1
+			occupiedCells.append(randomItem)
 
 func NPCMoveTwo():
-	print("NPC")
-	inoccupiedCells = []
-	for item in cells:
-		print(item.value)
-	for item in cells:
-		if item.value == 0:  
-			inoccupiedCells.append(item)
-		if item.value != 0:  
-			inoccupiedCells.remove_at(cells.find(item))
-			print("Unoccupied")
-			print(len(inoccupiedCells))  
-	var randomIndex = randi_range(0, len(inoccupiedCells))  # Generate a random index within the array size
-	var randomItem = inoccupiedCells[randomIndex]  # Access the element at the random index
-	print("NPC")
-	randomItem.setX()
-	turns_played += 1
-	occupiedCells.append(randomItem)
+	if CheckWin() == false:
+		if CheckDraw() == false:
+			print("NPC")
+			inoccupiedCells = []
+			for item in cells:
+				print(item.value)
+			for item in cells:
+				if item.value == 0:  
+					inoccupiedCells.append(item)
+				if item.value != 0:  
+					inoccupiedCells.remove_at(cells.find(item))
+					print("Unoccupied")
+					print(len(inoccupiedCells))  
+			var randomIndex = randi_range(0, len(inoccupiedCells))  # Generate a random index within the array size
+			var randomItem = inoccupiedCells[randomIndex]  # Access the element at the random index
+			print("NPC")
+			randomItem.setX()
+			turns_played += 1
+			occupiedCells.append(randomItem)
 
 func SinglePlayer():
 	pass
