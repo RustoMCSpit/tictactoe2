@@ -19,10 +19,7 @@ func _ready():
 	print("The value of GridCell1 is ", cells[0].value)
 	# listen for clicks
 	for cell in cells:
-		if turns_played % 2 != 0 or turns_played == 0:
-			cell.cell_clicked.connect(HumanMove)
-		elif turns_played % 2 == 0:
-			cell.cell_clicked.connect(HumanMoveTwo)
+		cell.cell_clicked.connect(HumanMove)
 	winner = 0 # no one has won yet
 	
 	ChosenMode()
@@ -104,10 +101,7 @@ func HumanMoveTwo(cell):
 			cell.setO()
 			turns_played += 1
 			occupiedCells.append(cell)
-			if Global.gamemode == 0:
-				NPCMove()
-			elif Global.gamemode == 1:
-				pass
+			NPCMove()
 			# Pick an unchosen cell if CheckEnd returns true 
 
 func NPCMove():
