@@ -181,3 +181,18 @@ func _on_reload_pressed():
 
 func _on_back_to_menu_pressed():
 	get_tree().change_scene_to_file("res://menu.tscn")
+
+
+
+"""
+Known Bugs:
+	Simulation breaks reload
+	Multiplayer doesn't work
+	You can click on occupied tiles
+
+Desired Features:
+	Implement the 0.5 - 0.8 second wait for an NPC move
+	Nicer looking GUI
+	Sound effects
+	Have a line show the victory path
+"""
