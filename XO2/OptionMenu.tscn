@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://crnq27uyblq4h"]
+
+[ext_resource type="Script" path="res://OptionMenu.gd" id="1_x5atr"]
+
+[node name="OptionMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x5atr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -68.0
+offset_right = 164.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SPMode" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Singleplayer"
+
+[node name="MPMode" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Multiplayer"
+
+[node name="SimMode" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Simulation"
+
+[node name="ToMainMenu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/SPMode" to="." method="_on_sp_mode_pressed"]
+[connection signal="pressed" from="VBoxContainer/MPMode" to="." method="_on_mp_mode_pressed"]
+[connection signal="pressed" from="VBoxContainer/SimMode" to="." method="_on_sim_mode_pressed"]
+[connection signal="pressed" from="VBoxContainer/ToMainMenu" to="." method="_on_to_main_menu_pressed"]
