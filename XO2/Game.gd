@@ -115,7 +115,7 @@ func NPCMove():
 					inoccupiedCells.remove_at(cells.find(item))
 					print("Unoccupied")
 					print(len(inoccupiedCells))  
-			var randomIndex = randi_range(0, len(inoccupiedCells))  # Generate a random index within the array size
+			var randomIndex = randi_range(0, len(inoccupiedCells)-1)  # Generate a random index within the array size
 			var randomItem = inoccupiedCells[randomIndex]  # Access the element at the random index
 			print("NPC")
 			randomItem.setO()
@@ -136,7 +136,7 @@ func NPCMoveTwo():
 					inoccupiedCells.remove_at(cells.find(item))
 					print("Unoccupied")
 					print(len(inoccupiedCells))  
-			var randomIndex = randi_range(0, len(inoccupiedCells))  # Generate a random index within the array size
+			var randomIndex = randi_range(0, len(inoccupiedCells)-1)  # Generate a random index within the array size
 			var randomItem = inoccupiedCells[randomIndex]  # Access the element at the random index
 			print("NPC")
 			randomItem.setX()
@@ -171,3 +171,4 @@ func ChosenMode():
 		2:
 			print ("Welcome to Simulation")
 			Simulation()
+
